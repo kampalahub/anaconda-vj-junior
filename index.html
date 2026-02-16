@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="-3LjsmNelg12VIDZmZJaO2baravG5K3RMy4IY-VhOFA" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anaconda - VJ Junior | Free Full Movie</title>
+
+
+
+<!--===================== MOVIE + TOP AD BLOCK =====================-->
+<div class="movie-feed-wrapper">
+
+
+
+  <!--MOVIE FEED-->
+  <div class="post-split-content" id="movie-label-posts-post"></div>
+
+</div>
+
+<style>
+.movie-feed-wrapper {
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,.9);
+  margin: 30px 0;
+}
+
+.top-feed-ad {
+  padding: 15px 15px 5px 15px;
+  background: #111;
+}
+
+.post-split-content {
+  padding: 10px 15px 15px 15px;
+}
+
+.post-movie-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .3s ease;
+}
+
+.post-movie-card:hover {
+  transform: scale(1.03);
+}
+
+.post-poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.post-movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s ease;
+}
+
+.post-movie-card:hover img {
+  filter: brightness(.4);
+  transform: scale(1.05);
+}
+
+/* ✅ LARGER PLAY BUTTON */
+.post-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+
+  background: #ffffff;
+  border: 8px solid #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.7);
+  transition: 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* Bigger triangle */
+.post-play-button::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 30px solid #000;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  margin-left: 6px;
+}
+
+.post-movie-card:hover .post-play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.post-movie-title {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  background: #e50914;
+  color: #fff;
+}
+</style>
+
+<script>
+function renderMovieLabelPostsPost(json) {
+  var container = document.getElementById('movie-label-posts-post');
+  if (!container || !json.feed.entry) return;
+
+  container.innerHTML = '';
+
+  var entry = json.feed.entry[0];
+  var pageUrl = 'https://www.marketing2advertising.com/p/vj-junior-anaconda.html';
+  var title = entry.title.$t;
+
+  var imgUrl = 'https://via.placeholder.com/300x450?text=No+Image';
+  if (entry.media$thumbnail) {
+    imgUrl = entry.media$thumbnail.url.replace('/s72-c/', '/s640/');
+  } else if (entry.content) {
+    var match = entry.content.$t.match(/<img[^>]+src="([^">]+)"/);
+    if (match) imgUrl = match[1];
+  }
+
+  var card = document.createElement('div');
+  card.className = 'post-movie-card';
+  card.innerHTML = `
+    <a href="${pageUrl}">
+      <div class="post-poster">
+        <img src="${imgUrl}" alt="${title}">
+        <div class="post-play-button"></div>
+      </div>
+      <div class="post-movie-title">${title}</div>
+    </a>
+  `;
+
+  container.appendChild(card);
+}
+</script>
+
+
+<!--BLOGGER FEED-->
+<script src="https://www.marketing2advertising.com/feeds/posts/default/-/anaconda2026?alt=json-in-script&amp;callback=renderMovieLabelPostsPost"></script>
+
+
+</body>
+</html>
